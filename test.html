@@ -1,0 +1,51 @@
+<script src="jquery.js"></script>
+<script src="underscore.js"></script>
+<script src="test.js"></script>
+
+<table>
+	<tr>
+		<td class="main">
+			<ul id="rooms"> </ul>
+		</td>
+		<td>
+			<p>
+				This is just a proof of concept. We're retreiving a delayed continuous transcription stream from the browser. We're then just checking if the first 2 words match what we're expecting.
+			</p>
+
+			<p>
+				Soon, <a href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html#speechreco-speechgrammar" target="_blank">SpeechGrammar</a> will be implemented in Chrome. With this, accuracy will be greatly improved as we can tell the Speech Recognition engine exactly what commands we're expecting.
+				<br>
+				For example, with commands, the Speech Recognition has some idea of what words to expect, so can weight the results in that favour. Without it, 'Add Room' could be mis-interpreted as something like 'Add Broom' etc.
+			</p>
+
+			<button id="start"><img src="speech.jpg"></button>
+		</td>
+	</tr>
+</table>
+
+
+<script type="template" id="roomTemplate">
+	<li id="room-<%= id %>" class="room">
+		<%=id%> <%= name %>
+		<ul id="room-<%= id %>-items">
+		</ul>
+	</li>
+</script>
+
+<script type="template" id="itemTemplate">
+	<li id="item-<%= id %>" class="item">
+		<%= name %>
+	</li>
+</script>
+
+<style>
+table { max-width: 1020px; }
+.main { width: 40%; }
+.selected { background: lightblue; }
+.listening { opacity: .7; }
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+</style>
