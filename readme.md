@@ -10,3 +10,5 @@ For example, with commands, the Speech Recognition has some idea of what words t
 * Select Room {roomName}
 * Remove Room {roomName} _(blank for selected)_
 * Add Item {itemName} _(adds to selected room)_
+
+![](http://danharper.github.com/speech/speech.jpg)
