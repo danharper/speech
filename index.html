@@ -5,6 +5,14 @@
 <table>
 	<tr>
 		<td class="main">
+			<h3>Voice Commands</h3>
+			<ul>
+				<li>Add Room {roomName}
+				<li>Select Room {roomName}
+				<li>Remove Room {roomName} <i>(blank for selected)</i>
+				<li>Add Item {itemName} <i>(adds to selected room)</i>
+			</ul>
+			<hr>
 			<ul id="rooms"> </ul>
 		</td>
 		<td>
@@ -18,7 +26,7 @@
 				For example, with commands, the Speech Recognition has some idea of what words to expect, so can weight the results in that favour. Without it, 'Add Room' could be mis-interpreted as something like 'Add Broom' etc.
 			</p>
 
-			<button id="start"><img src="speech.jpg"></button>
+			<button id="start">Start Recording</button>
 		</td>
 	</tr>
 </table>
@@ -40,12 +48,7 @@
 
 <style>
 table { max-width: 1020px; }
-.main { width: 40%; }
+.main { width: 40%; vertical-align: top; }
 .selected { background: lightblue; }
 .listening { opacity: .7; }
-button {
-	background: none;
-	border: none;
-	cursor: pointer;
-}
 </style>
